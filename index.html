@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast Learning App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">Podcast Learning App</h1>
+        </header>
+
+        <!-- Audio Player -->
+        <div id="player" class="mb-8 bg-white rounded-lg shadow p-4">
+            <audio id="podcast-audio" controls class="w-full"></audio>
+            <div id="progress-container" class="mt-4">
+                <div class="bg-gray-200 rounded-full h-2">
+                    <div id="progress-bar" class="bg-blue-500 rounded-full h-2" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Questions Container -->
+        <div id="questions-container" class="bg-white rounded-lg shadow p-4 hidden">
+            <h2 class="text-xl font-semibold mb-4">Question</h2>
+            <div id="question-content"></div>
+            <div id="answer-options" class="space-y-2 mt-4"></div>
+            <button id="submit-answer" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Submit Answer
+            </button>
+        </div>
+    </div>
+
+    <!-- Google Sheets API -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    
+    <!-- Application Scripts -->
+    <script src="scripts/sheets-api.js"></script>
+    <script src="scripts/player.js"></script>
+    <script src="scripts/questions.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
